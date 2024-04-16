@@ -2,7 +2,7 @@
 
 A demo of typescript types for serializing and deserializing PSPDFKit annotations.
 
-- PSPDFKit v2024.3.0
+- PSPDFKit v2024.3.0 (using as standalone instead of server)
 - Typescript v5.4.4
 - React v18
 

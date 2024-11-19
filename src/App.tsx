@@ -4,7 +4,7 @@ import PSPDFKit, { AnnotationsUnion, List } from "pspdfkit";
 //@ts-ignore ignore the unused function
 function exampleOne(): void {
   /*
-    EXAMPLE 1
+    EXAMPLE 1 - FIXED!
   
     source: https://pspdfkit.com/guides/web/importing-exporting/instant-json/
   */
@@ -21,14 +21,6 @@ function exampleOne(): void {
   });
   const annotationJSON = PSPDFKit.Annotations.toSerializableObject(annotation);
 
-  /*
-    error TS2345: Argument of type 'AnnotationBackendJSON<RectangleAnnotationJSON, never>' is not assignable to parameter of type 'AnnotationJSONUnion'.
-    Type 'AnnotationBackendJSON<RectangleAnnotationJSON, never>' is not assignable to type 'RectangleAnnotationJSON'.
-      Type 'AnnotationBackendJSON<RectangleAnnotationJSON, never>' is not assignable to type '{ strokeWidth: number; strokeColor: string | null; fillColor: string | null; strokeDashArray?: [number, number] | null | undefined; measurementPrecision?: IMeasurementPrecision | null | undefined; measurementScale?: MeasurementScaleJSON | ... 1 more ... | undefined; lineWidth?: number | ... 1 more ... | undefined; }'.
-        Types of property 'strokeWidth' are incompatible.
-          Type 'number | undefined' is not assignable to type 'number'.
-            Type 'undefined' is not assignable to type 'number'.
-  */
   const deserializedAnnotation =
     PSPDFKit.Annotations.fromSerializableObject(annotationJSON);
 
